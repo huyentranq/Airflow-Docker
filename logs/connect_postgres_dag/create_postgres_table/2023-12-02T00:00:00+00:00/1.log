@@ -1,0 +1,39 @@
+[2025-06-18 16:23:52,585] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.create_postgres_table 2023-12-02T00:00:00+00:00 [queued]>
+[2025-06-18 16:23:52,628] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.create_postgres_table 2023-12-02T00:00:00+00:00 [queued]>
+[2025-06-18 16:23:52,628] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:23:52,628] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-18 16:23:52,628] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:23:52,655] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_table> on 2023-12-02T00:00:00+00:00
+[2025-06-18 16:23:52,662] {standard_task_runner.py:52} INFO - Started process 877 to run task
+[2025-06-18 16:23:52,670] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'connect_postgres_dag', 'create_postgres_table', '2023-12-02T00:00:00+00:00', '--job-id', '15353', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/connect_postgres_dag.py', '--cfg-path', '/tmp/tmp2lam_3ke', '--error-file', '/tmp/tmpcz7qc6mh']
+[2025-06-18 16:23:52,674] {standard_task_runner.py:77} INFO - Job 15353: Subtask create_postgres_table
+[2025-06-18 16:23:52,768] {logging_mixin.py:104} INFO - Running <TaskInstance: connect_postgres_dag.create_postgres_table 2023-12-02T00:00:00+00:00 [running]> on host ee91c01336f6
+[2025-06-18 16:23:52,852] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=coder2j
+AIRFLOW_CTX_DAG_ID=connect_postgres_dag
+AIRFLOW_CTX_TASK_ID=create_postgres_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-02T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-12-02T00:00:00+00:00
+[2025-06-18 16:23:52,853] {postgres.py:69} INFO - Executing: 
+            create table if not exists employee (
+                "name" text,
+                "age" integer,
+                "salary" numeric
+            )
+        
+[2025-06-18 16:23:52,872] {base.py:74} INFO - Using connection to: id: postgres_localhost. Host: postgres, Port: 5432, Schema: test, Login: airflow, Password: XXXXXXXX, extra: None
+[2025-06-18 16:23:52,880] {dbapi.py:180} INFO - Running statement: 
+            create table if not exists employee (
+                "name" text,
+                "age" integer,
+                "salary" numeric
+            )
+        , parameters: None
+[2025-06-18 16:23:52,881] {dbapi.py:186} INFO - Rows affected: -1
+[2025-06-18 16:23:52,881] {postgres.py:73} INFO - NOTICE:  relation "employee" already exists, skipping
+
+[2025-06-18 16:23:52,914] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=connect_postgres_dag, task_id=create_postgres_table, execution_date=20231202T000000, start_date=20250618T162352, end_date=20250618T162352
+[2025-06-18 16:23:52,985] {taskinstance.py:1220} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-18 16:23:53,008] {local_task_job.py:146} INFO - Task exited with return code 0

@@ -1,0 +1,46 @@
+[2025-06-18 02:20:37,743] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: dag_with_postgres_operator_v03.create_postgres_table 2021-12-27T00:00:00+00:00 [queued]>
+[2025-06-18 02:20:37,808] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: dag_with_postgres_operator_v03.create_postgres_table 2021-12-27T00:00:00+00:00 [queued]>
+[2025-06-18 02:20:37,808] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 02:20:37,808] {taskinstance.py:1043} INFO - Starting attempt 3 of 6
+[2025-06-18 02:20:37,808] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 02:20:37,837] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_table> on 2021-12-27T00:00:00+00:00
+[2025-06-18 02:20:37,863] {standard_task_runner.py:52} INFO - Started process 5467 to run task
+[2025-06-18 02:20:37,910] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_with_postgres_operator_v03', 'create_postgres_table', '2021-12-27T00:00:00+00:00', '--job-id', '8306', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/connect_postgres.py', '--cfg-path', '/tmp/tmpnvotcc1u', '--error-file', '/tmp/tmp6qk_re9e']
+[2025-06-18 02:20:37,925] {standard_task_runner.py:77} INFO - Job 8306: Subtask create_postgres_table
+[2025-06-18 02:20:38,083] {logging_mixin.py:104} INFO - Running <TaskInstance: dag_with_postgres_operator_v03.create_postgres_table 2021-12-27T00:00:00+00:00 [running]> on host 4f8b76136637
+[2025-06-18 02:20:38,259] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=coder2j
+AIRFLOW_CTX_DAG_ID=dag_with_postgres_operator_v03
+AIRFLOW_CTX_TASK_ID=create_postgres_table
+AIRFLOW_CTX_EXECUTION_DATE=2021-12-27T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-12-27T00:00:00+00:00
+[2025-06-18 02:20:38,260] {postgres.py:69} INFO - Executing: 
+            create table if not exists dag_runs (
+                dt date,
+                dag_id character varying,
+                primary key (dt, dag_id)
+            )
+        
+[2025-06-18 02:20:38,304] {base.py:74} INFO - Using connection to: id: postgres_localhost. Host: local.docker.internal, Port: 5432, Schema: test, Login: airflow, Password: XXXXXXXX, extra: None
+[2025-06-18 02:20:38,313] {taskinstance.py:1455} ERROR - could not translate host name "local.docker.internal" to address: No address associated with hostname
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/operators/postgres.py", line 71, in execute
+    self.hook.run(self.sql, self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/hooks/dbapi.py", line 173, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/hooks/postgres.py", line 108, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "local.docker.internal" to address: No address associated with hostname
+
+[2025-06-18 02:20:38,322] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_with_postgres_operator_v03, task_id=create_postgres_table, execution_date=20211227T000000, start_date=20250618T022037, end_date=20250618T022038
+[2025-06-18 02:20:38,464] {local_task_job.py:146} INFO - Task exited with return code 1

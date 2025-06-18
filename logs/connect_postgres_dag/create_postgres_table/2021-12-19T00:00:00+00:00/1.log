@@ -1,0 +1,51 @@
+[2025-06-18 16:10:48,137] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.create_postgres_table 2021-12-19T00:00:00+00:00 [queued]>
+[2025-06-18 16:10:48,155] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.create_postgres_table 2021-12-19T00:00:00+00:00 [queued]>
+[2025-06-18 16:10:48,155] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:10:48,155] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-18 16:10:48,155] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:10:48,206] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): create_postgres_table> on 2021-12-19T00:00:00+00:00
+[2025-06-18 16:10:48,215] {standard_task_runner.py:52} INFO - Started process 25913 to run task
+[2025-06-18 16:10:48,222] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'connect_postgres_dag', 'create_postgres_table', '2021-12-19T00:00:00+00:00', '--job-id', '13914', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/connect_postgres_dag.py', '--cfg-path', '/tmp/tmptf1pf32n', '--error-file', '/tmp/tmpazhxoftj']
+[2025-06-18 16:10:48,228] {standard_task_runner.py:77} INFO - Job 13914: Subtask create_postgres_table
+[2025-06-18 16:10:48,313] {logging_mixin.py:104} INFO - Running <TaskInstance: connect_postgres_dag.create_postgres_table 2021-12-19T00:00:00+00:00 [running]> on host 500dc4ac3a72
+[2025-06-18 16:10:48,379] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=coder2j
+AIRFLOW_CTX_DAG_ID=connect_postgres_dag
+AIRFLOW_CTX_TASK_ID=create_postgres_table
+AIRFLOW_CTX_EXECUTION_DATE=2021-12-19T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-12-19T00:00:00+00:00
+[2025-06-18 16:10:48,379] {postgres.py:69} INFO - Executing: 
+            create table if not exists employee (
+                "name" text,
+                "age" integer,
+                "salary" numeric
+            )
+        
+[2025-06-18 16:10:48,392] {base.py:74} INFO - Using connection to: id: postgres_localhost. Host: postgres, Port: 5432, Schema: test, Login: airflow, Password: XXXXXXXX, extra: None
+[2025-06-18 16:10:48,399] {dbapi.py:180} INFO - Running statement: 
+            create table if not exists employee (
+                "name" text,
+                "age" integer,
+                "salary" numeric
+            )
+        , parameters: None
+[2025-06-18 16:10:48,440] {taskinstance.py:1455} ERROR - duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(employee, 2200) already exists.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1112, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1285, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1315, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/providers/postgres/operators/postgres.py", line 71, in execute
+    self.hook.run(self.sql, self.autocommit, parameters=self.parameters)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/hooks/dbapi.py", line 184, in run
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(employee, 2200) already exists.
+
+[2025-06-18 16:10:48,446] {taskinstance.py:1503} INFO - Marking task as UP_FOR_RETRY. dag_id=connect_postgres_dag, task_id=create_postgres_table, execution_date=20211219T000000, start_date=20250618T161048, end_date=20250618T161048
+[2025-06-18 16:10:48,515] {local_task_job.py:146} INFO - Task exited with return code 1

@@ -1,0 +1,27 @@
+[2025-06-18 15:04:36,879] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: first_dag.second_task 2023-06-07T00:00:00+00:00 [queued]>
+[2025-06-18 15:04:36,915] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: first_dag.second_task 2023-06-07T00:00:00+00:00 [queued]>
+[2025-06-18 15:04:36,916] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 15:04:36,916] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-18 15:04:36,917] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 15:04:36,951] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): second_task> on 2023-06-07T00:00:00+00:00
+[2025-06-18 15:04:36,960] {standard_task_runner.py:52} INFO - Started process 9745 to run task
+[2025-06-18 15:04:36,980] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'first_dag', 'second_task', '2023-06-07T00:00:00+00:00', '--job-id', '11694', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpdlsnxgq9', '--error-file', '/tmp/tmpj6wpk44k']
+[2025-06-18 15:04:36,988] {standard_task_runner.py:77} INFO - Job 11694: Subtask second_task
+[2025-06-18 15:04:37,134] {logging_mixin.py:104} INFO - Running <TaskInstance: first_dag.second_task 2023-06-07T00:00:00+00:00 [running]> on host 500dc4ac3a72
+[2025-06-18 15:04:37,296] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=my_name
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=second_task
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-07T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-06-07T00:00:00+00:00
+[2025-06-18 15:04:37,296] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2025-06-18 15:04:37,301] {bash.py:158} INFO - Running command: echo "this is sencond task "
+[2025-06-18 15:04:37,331] {bash.py:169} INFO - Output:
+[2025-06-18 15:04:37,335] {bash.py:173} INFO - this is sencond task
+[2025-06-18 15:04:37,336] {bash.py:177} INFO - Command exited with return code 0
+[2025-06-18 15:04:37,477] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=second_task, execution_date=20230607T000000, start_date=20250618T150436, end_date=20250618T150437
+[2025-06-18 15:04:37,698] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18 15:04:37,738] {local_task_job.py:146} INFO - Task exited with return code 0

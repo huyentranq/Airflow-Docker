@@ -1,0 +1,22 @@
+[2025-06-17 16:05:10,835] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: dag_with_taskflow_api_v02.greet 2024-12-19T00:00:00+00:00 [queued]>
+[2025-06-17 16:05:10,955] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: dag_with_taskflow_api_v02.greet 2024-12-19T00:00:00+00:00 [queued]>
+[2025-06-17 16:05:10,956] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 16:05:10,956] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-17 16:05:10,956] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17 16:05:11,011] {taskinstance.py:1063} INFO - Executing <Task(_PythonDecoratedOperator): greet> on 2024-12-19T00:00:00+00:00
+[2025-06-17 16:05:11,043] {standard_task_runner.py:52} INFO - Started process 14029 to run task
+[2025-06-17 16:05:11,054] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'dag_with_taskflow_api_v02', 'greet', '2024-12-19T00:00:00+00:00', '--job-id', '6917', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/taskflow.py', '--cfg-path', '/tmp/tmpdvo2mq26', '--error-file', '/tmp/tmpy7mcdsik']
+[2025-06-17 16:05:11,071] {standard_task_runner.py:77} INFO - Job 6917: Subtask greet
+[2025-06-17 16:05:11,290] {logging_mixin.py:104} INFO - Running <TaskInstance: dag_with_taskflow_api_v02.greet 2024-12-19T00:00:00+00:00 [running]> on host 4f8b76136637
+[2025-06-17 16:05:11,742] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=coder2j
+AIRFLOW_CTX_DAG_ID=dag_with_taskflow_api_v02
+AIRFLOW_CTX_TASK_ID=greet
+AIRFLOW_CTX_EXECUTION_DATE=2024-12-19T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-12-19T00:00:00+00:00
+[2025-06-17 16:05:11,747] {logging_mixin.py:104} INFO - Hello World! My name is Jerry Fridman and I am 19 years old!
+[2025-06-17 16:05:11,897] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=dag_with_taskflow_api_v02, task_id=greet, execution_date=20241219T000000, start_date=20250617T160510, end_date=20250617T160511
+[2025-06-17 16:05:12,215] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-17 16:05:12,253] {local_task_job.py:146} INFO - Task exited with return code 0

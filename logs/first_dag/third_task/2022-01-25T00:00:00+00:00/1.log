@@ -1,0 +1,27 @@
+[2025-06-18 15:01:12,791] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: first_dag.third_task 2022-01-25T00:00:00+00:00 [queued]>
+[2025-06-18 15:01:12,817] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: first_dag.third_task 2022-01-25T00:00:00+00:00 [queued]>
+[2025-06-18 15:01:12,818] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 15:01:12,818] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-18 15:01:12,818] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 15:01:12,869] {taskinstance.py:1063} INFO - Executing <Task(BashOperator): third_task> on 2022-01-25T00:00:00+00:00
+[2025-06-18 15:01:12,885] {standard_task_runner.py:52} INFO - Started process 4789 to run task
+[2025-06-18 15:01:12,908] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'first_dag', 'third_task', '2022-01-25T00:00:00+00:00', '--job-id', '10200', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/first_dag.py', '--cfg-path', '/tmp/tmpa5qr_o5v', '--error-file', '/tmp/tmpn5eqt7tr']
+[2025-06-18 15:01:12,929] {standard_task_runner.py:77} INFO - Job 10200: Subtask third_task
+[2025-06-18 15:01:13,093] {logging_mixin.py:104} INFO - Running <TaskInstance: first_dag.third_task 2022-01-25T00:00:00+00:00 [running]> on host 500dc4ac3a72
+[2025-06-18 15:01:13,232] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=my_name
+AIRFLOW_CTX_DAG_ID=first_dag
+AIRFLOW_CTX_TASK_ID=third_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-01-25T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-01-25T00:00:00+00:00
+[2025-06-18 15:01:13,233] {bash.py:135} INFO - Tmp dir root location: 
+ /tmp
+[2025-06-18 15:01:13,235] {bash.py:158} INFO - Running command: echo "this is third task "
+[2025-06-18 15:01:13,260] {bash.py:169} INFO - Output:
+[2025-06-18 15:01:13,264] {bash.py:173} INFO - this is third task
+[2025-06-18 15:01:13,265] {bash.py:177} INFO - Command exited with return code 0
+[2025-06-18 15:01:13,432] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=first_dag, task_id=third_task, execution_date=20220125T000000, start_date=20250618T150112, end_date=20250618T150113
+[2025-06-18 15:01:13,642] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18 15:01:13,732] {local_task_job.py:146} INFO - Task exited with return code 0

@@ -1,0 +1,29 @@
+[2025-06-18 16:23:43,329] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.insert_into_table 2023-10-25T00:00:00+00:00 [queued]>
+[2025-06-18 16:23:43,349] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: connect_postgres_dag.insert_into_table 2023-10-25T00:00:00+00:00 [queued]>
+[2025-06-18 16:23:43,349] {taskinstance.py:1042} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:23:43,349] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
+[2025-06-18 16:23:43,350] {taskinstance.py:1044} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-18 16:23:43,370] {taskinstance.py:1063} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2023-10-25T00:00:00+00:00
+[2025-06-18 16:23:43,375] {standard_task_runner.py:52} INFO - Started process 717 to run task
+[2025-06-18 16:23:43,387] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'connect_postgres_dag', 'insert_into_table', '2023-10-25T00:00:00+00:00', '--job-id', '15286', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/connect_postgres_dag.py', '--cfg-path', '/tmp/tmpiaxdxnj0', '--error-file', '/tmp/tmpns6p6ljy']
+[2025-06-18 16:23:43,392] {standard_task_runner.py:77} INFO - Job 15286: Subtask insert_into_table
+[2025-06-18 16:23:43,481] {logging_mixin.py:104} INFO - Running <TaskInstance: connect_postgres_dag.insert_into_table 2023-10-25T00:00:00+00:00 [running]> on host ee91c01336f6
+[2025-06-18 16:23:43,586] {taskinstance.py:1257} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=coder2j
+AIRFLOW_CTX_DAG_ID=connect_postgres_dag
+AIRFLOW_CTX_TASK_ID=insert_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-10-25T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-10-25T00:00:00+00:00
+[2025-06-18 16:23:43,586] {postgres.py:69} INFO - Executing: 
+            insert into employee (name,age,salary) values ('hayyye', '1997','5000.00');
+        
+[2025-06-18 16:23:43,606] {base.py:74} INFO - Using connection to: id: postgres_localhost. Host: postgres, Port: 5432, Schema: test, Login: airflow, Password: XXXXXXXX, extra: None
+[2025-06-18 16:23:43,616] {dbapi.py:180} INFO - Running statement: 
+            insert into employee (name,age,salary) values ('hayyye', '1997','5000.00');
+        , parameters: None
+[2025-06-18 16:23:43,619] {dbapi.py:186} INFO - Rows affected: 1
+[2025-06-18 16:23:43,660] {taskinstance.py:1166} INFO - Marking task as SUCCESS. dag_id=connect_postgres_dag, task_id=insert_into_table, execution_date=20231025T000000, start_date=20250618T162343, end_date=20250618T162343
+[2025-06-18 16:23:43,744] {taskinstance.py:1220} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-18 16:23:43,760] {local_task_job.py:146} INFO - Task exited with return code 0
