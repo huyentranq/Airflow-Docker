@@ -1,8 +1,0 @@
-[2025-06-17 15:49:08,665] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_first_dag_v5.second_task 2022-05-06T00:00:00+00:00 [queued]>
-[2025-06-17 15:49:08,829] {taskinstance.py:851} INFO - Dependencies all met for <TaskInstance: our_first_dag_v5.second_task 2022-05-06T00:00:00+00:00 [queued]>
-[2025-06-17 15:49:08,830] {taskinstance.py:1042} INFO - 
---------------------------------------------------------------------------------
-[2025-06-17 15:49:08,830] {taskinstance.py:1043} INFO - Starting attempt 1 of 6
-[2025-06-17 15:49:08,830] {taskinstance.py:1044} INFO - 
---------------------------------------------------------------------------------
-[2025-06-17 15:49:09,005] {local_task_job.py:77} ERROR - Received SIGTERM. Terminating subprocesses
