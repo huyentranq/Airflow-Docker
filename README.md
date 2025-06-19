@@ -21,6 +21,14 @@ https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html
    git clone <this_repo_url>
    cd Airflow-Docker
 ```
+2. create this fold and grant write permissions to them 
+```sh
+    mkdir -p data logs plugins dags
+    chmod -R 777 dags logs plugins data
+
+    ```
+
+```
 2. Build and start the containers:
  ```sh
    make build
