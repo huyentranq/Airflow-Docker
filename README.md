@@ -1,6 +1,14 @@
-# This repo is my basic lesson about Airflow with Docker
+## This repo is my basic code about Airflow with Docker
 First of all, you can learn from this before using this repo
+
 https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html
+
+## What you can learn from this repos: 
+- first_dag: Demonstrates the traditional way of building a DAG and  define dependencies between tasks manually.
+- taskflow_dag: Demonstrates building a DAG using the TaskFlow API — a  readable approach.
+- connect_postgres_dag:  interact with a PostgreSQL database in Airflow (make sure Airflow is connected to PostgreSQL first).
+- postgres_hook_dag: Demonstrates how to use the PostgresHook in Airflow to execute queries or retrieve data from a PostgreSQL database.
+
 ## Requirements:
 - Docker
 - Python
@@ -9,11 +17,12 @@ https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html
 ## Let's Start:
 
 1. Clone the repository:
+```sh
    git clone <this_repo_url>
    cd Airflow-Docker
-
+```
 2. Build and start the containers:
-sh ```
+ ```sh
    make build
    make up
 ```
@@ -28,3 +37,5 @@ sh ```
 6. Ensure Airflow is connected to PostgreSQL.
 
 7. Run and check your DAGs in the Airflow UI.
+
+### Happy coding!
